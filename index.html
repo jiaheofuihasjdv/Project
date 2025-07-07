@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Link CSS file / Liên kết file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons / Font Awesome cho biểu tượng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Chart.js for charts / Chart.js cho biểu đồ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts for space theme / Google Fonts cho theme không gian -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background / Nền động -->
+    <div class="space-background">
+        <div class="stars"></div>
+        <div class="blackhole-effect"></div>
+    </div>
+
+    <!-- Main container / Container chính -->
+    <div class="dashboard-container">
+        <!-- Sidebar navigation / Thanh điều hướng bên -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="blackhole-logo"></div>
+                    <h2><span class="logo-text">DASH</span><span class="logo-accent">BOARD</span></h2>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="overview">
+                        <i class="fas fa-rocket"></i>
+                        <span>Overview</span>
+                        <div class="nav-glow"></div>
+                    </a></li>
+                    <li><a href="#" class="nav-link" data-section="analytics">
+                        <i class="fas fa-satellite"></i>
+                        <span>Analytics</span>
+                        <div class="nav-glow"></div>
+                    </a></li>
+                    <li><a href="#" class="nav-link" data-section="users">
+                        <i class="fas fa-user-astronaut"></i>
+                        <span>Users</span>
+                        <div class="nav-glow"></div>
+                    </a></li>
+                    <li><a href="#" class="nav-link" data-section="data">
+                        <i class="fas fa-database"></i>
+                        <span>Data</span>
+                        <div class="nav-glow"></div>
+                    </a></li>
+                    <li><a href="#" class="nav-link" data-section="systems">
+                        <i class="fas fa-cogs"></i>
+                        <span>Systems</span>
+                        <div class="nav-glow"></div>
+                    </a></li>
+                    <li><a href="#" class="nav-link" data-section="settings">
+                        <i class="fas fa-atom"></i>
+                        <span>Settings</span>
+                        <div class="nav-glow"></div>
+                    </a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="power-indicator">
+                    <div class="power-ring"></div>
+                    <span>ONLINE</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main content area / Khu vực nội dung chính -->
+        <main class="main-content">
+            <!-- Top header / Header trên cùng -->
+            <header class="top-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                        <div class="button-glow"></div>
+                    </button>
+                    <h1 id="pageTitle">DASHBOARD</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-container">
+                        <input type="text" placeholder="Search in the universe..." class="cosmic-search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar-container">
+                            <img src="https://via.placeholder.com/40/000000/ffffff?text=A" alt="Admin Avatar">
+                            <div class="status-ring"></div>
+                        </div>
+                        <div class="user-info">
+                            <span class="user-name">Admin</span>
+                            <span class="user-rank">Alpha-7</span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard content sections / Các phần nội dung dashboard -->
+            <div class="content-wrapper">
+                <!-- Overview section / Phần tổng quan -->
+                <section id="overview" class="content-section active">
+                    <!-- Stats cards / Thẻ thống kê -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="card-glow"></div>
+                            <div class="stat-content">
+                                <div class="stat-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="totalUsers" class="counter">1,234</h3>
+                                    <p>Active Nodes</p>
+                                    <div class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+12%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-pulse"></div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="card-glow"></div>
+                            <div class="stat-content">
+                                <div class="stat-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="totalEnergy" class="counter">98.7</h3>
+                                    <p>Energy Level (%)</p>
+                                    <div class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+8%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-pulse"></div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="card-glow"></div>
+                            <div class="stat-content">
+                                <div class="stat-icon">
+                                    <i class="fas fa-satellite-dish"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="totalSignals" class="counter">567</h3>
+                                    <p>Signals Detected</p>
+                                    <div class="stat-change negative">
+                                        <i class="fas fa-arrow-down"></i>
+                                        <span>-3%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-pulse"></div>
+                        </div>
+
+                        <div class="stat-card">
+                            <div class="card-glow"></div>
+                            <div class="stat-content">
+                                <div class="stat-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="totalSecurity" class="counter">99.9</h3>
+                                    <p>Security Status (%)</p>
+                                    <div class="stat-change positive">
+                                        <i class="fas fa-arrow-up"></i>
+                                        <span>+5%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="stat-pulse"></div>
+                        </div>
+                    </div>
+
+                    <!-- Charts section / Phần biểu đồ -->
+                    <div class="charts-grid">
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>Quantum Flux Analysis</h3>
+                                <div class="chart-controls">
+                                    <button class="chart-btn active">7D</button>
+                                    <button class="chart-btn">30D</button>
+                                    <button class="chart-btn">1Y</button>
+                                </div>
+                            </div>
+                            <canvas id="quantumChart"></canvas>
+                        </div>
+
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <h3>System Distribution</h3>
+                            </div>
+                            <canvas id="systemChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- System status / Trạng thái hệ thống -->
+                    <div class="system-status">
+                        <h3>System Status Monitor</h3>
+                        <div class="status-grid">
+                            <div class="status-item">
+                                <div class="status-indicator online"></div>
+                                <span>Core Systems</span>
+                                <div class="status-value online">ONLINE</div>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-indicator online"></div>
+                                <span>Quantum Drive</span>
+                                <div class="status-value online">ACTIVE</div>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-indicator warning"></div>
+                                <span>Shield Matrix</span>
+                                <div class="status-value warning">WARNING</div>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-indicator offline"></div>
+                                <span>Backup Systems</span>
+                                <div class="status-value offline">OFFLINE</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Other sections placeholder / Placeholder cho các phần khác -->
+                <section id="analytics" class="content-section">
+                    <div class="section-header">
+                        <h2>Deep Space Analytics</h2>
+                        <p>Advanced data analysis from the void</p>
+                    </div>
+                </section>
+
+                <section id="users" class="content-section">
+                    <div class="section-header">
+                        <h2>User Management</h2>
+                        <p>Monitor and manage system users</p>
+                    </div>
+                </section>
+
+                <section id="data" class="content-section">
+                    <div class="section-header">
+                        <h2>Data Storage</h2>
+                        <p>Access to system data storage</p>
+                    </div>
+                </section>
+
+                <section id="systems" class="content-section">
+                    <div class="section-header">
+                        <h2>System Control</h2>
+                        <p>Manage all system components</p>
+                    </div>
+                </section>
+
+                <section id="settings" class="content-section">
+                    <div class="section-header">
+                        <h2>Settings</h2>
+                        <p>Adjust system parameters and preferences</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- JavaScript file / File JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
